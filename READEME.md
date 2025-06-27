@@ -18,18 +18,13 @@ O pipeline foi treinado com um RandomForestClassifier, integrado ao FastAPI para
 
 ## 📂 Estrutura do projeto
 
-Projeto001/
+Laranjal/
 ├── api.py # Código da API FastAPI
 ├── modelo_treinado.pkl # Pipeline treinado e salvo
 ├── requirements.txt # Dependências do projeto
 ├── README.md # Este arquivo
 └── .gitignore
 
-yaml
-Copiar
-Editar
-
----
 
 ## 🛠️ Como executar localmente
 
@@ -41,23 +36,17 @@ cd Laranjal-modelo
 Crie um ambiente virtual e ative:
 
 bash
-Copiar
-Editar
-python3 -m venv venv
-source venv/bin/activate
+    python3 -m venv venv
+    source venv/bin/activate
+
+
 Instale as dependências:
+    pip install -r requirements.txt
+    Inicie a API:
 
 bash
-Copiar
-Editar
-pip install -r requirements.txt
-Inicie a API:
-
-bash
-Copiar
-Editar
-uvicorn api:app --reload
-Acesse a documentação interativa:
+  uvicorn api:app --reload
+  Acesse a documentação interativa:
 
 👉 http://127.0.0.1:8000/docs
 
@@ -65,8 +54,6 @@ Acesse a documentação interativa:
 Use o endpoint /predict no Swagger UI ou envie um POST com dados JSON, exemplo:
 
 json
-Copiar
-Editar
 {
   "Size": 7.1,
   "Weight": 120,
@@ -82,11 +69,11 @@ Editar
 Resposta esperada:
 
 json
-Copiar
-Editar
 {
   "Qualidade Prevista": 3
 }
+
+
 💻 Tecnologias utilizadas
 Python
 
