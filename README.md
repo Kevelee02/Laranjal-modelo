@@ -37,6 +37,7 @@ Instale as dependências:
 bash
   uvicorn api:app --reload
   Acesse a documentação interativa:
+```
 
 👉 http://127.0.0.1:8000/docs
 
@@ -63,56 +64,55 @@ json
   "Qualidade Prevista": 3
 }
 
-Como foi feita a análise e criação do modelo
-O projeto foi desenvolvido com as seguintes etapas principais:
+## O projeto foi desenvolvido com as seguintes etapas principais:
 
-Exploração dos dados:
+# Exploração dos dados:
 
-Visualização de distribuições e correlações com Seaborn e Matplotlib.
+    Visualização de distribuições e correlações com Seaborn e Matplotlib.
 
-Identificação de variáveis categóricas e numéricas.
+    Identificação de variáveis categóricas e numéricas.
 
-Detecção e tratamento de valores faltantes e outliers.
+    Detecção e tratamento de valores faltantes e outliers.
 
-Pré-processamento:
+# Pré-processamento:
 
-Codificação de variáveis categóricas com One-Hot Encoding.
+    Codificação de variáveis categóricas com One-Hot Encoding.
 
-Transformação da coluna de defeitos em binária (Blemishes).
+    Transformação da coluna de defeitos em binária (Blemishes).
 
-Padronização dos dados numéricos com StandardScaler.
+    Padronização dos dados numéricos com StandardScaler.
 
-Conversão da variável alvo (contínua) em faixas discretas de qualidade.
+    Conversão da variável alvo (contínua) em faixas discretas de qualidade.
 
-Modelagem:
+# Modelagem:
 
-Treinamento de um RandomForestClassifier com ajuste de hiperparâmetros via Grid Search.
+    Treinamento de um RandomForestClassifier com ajuste de hiperparâmetros via Grid Search.
 
-Avaliação com métricas de acurácia e F1-score ponderado devido ao desbalanceamento entre classes.
+    Avaliação com métricas de acurácia e F1-score ponderado devido ao desbalanceamento entre classes.
 
-Análise da matriz de confusão para verificar o desempenho em cada classe.
+    Análise da matriz de confusão para verificar o desempenho em cada classe.
 
-Empacotamento:
+# Empacotamento:
 
-Criação de um pipeline completo com scikit-learn e feature-engine.
+    Criação de um pipeline completo com scikit-learn e feature-engine.
 
-Salvamento do pipeline treinado em .pkl com joblib para posterior carregamento.
+    Salvamento do pipeline treinado em .pkl com joblib para posterior carregamento.
 
-Serviço de API:
+# Serviço de API:
 
-Implementação de uma API REST com FastAPI.
+    Implementação de uma API REST com FastAPI.
 
-Endpoint /predict para receber dados em JSON e retornar a qualidade prevista.
+    Endpoint /predict para receber dados em JSON e retornar a qualidade prevista.
 
-💻 Tecnologias utilizadas
-Python
+## Tecnologias utilizadas
+    Python
 
-Scikit-Learn
+    Scikit-Learn
 
-Feature-engine
+    Feature-engine
 
-FastAPI
+    FastAPI
 
-Uvicorn
+    Uvicorn
 
-Joblib
+    Joblib
