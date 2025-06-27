@@ -1,4 +1,4 @@
-# 🍊 API de Classificação de Qualidade da Laranja
+# API de Classificação de Qualidade da Laranja
 
 Este projeto usa Machine Learning para prever a qualidade de uma laranja com base em características físicas e químicas.
 
@@ -6,7 +6,7 @@ O pipeline foi treinado com um RandomForestClassifier, integrado ao FastAPI para
 
 ---
 
-## 🚀 Funcionalidades
+## Funcionalidades
 
 - Pré-processamento com Feature-engine e Scikit-Learn
 - Transformação da variável alvo em classes discretas
@@ -15,16 +15,6 @@ O pipeline foi treinado com um RandomForestClassifier, integrado ao FastAPI para
 - Endpoint para previsão da qualidade da fruta
 
 ---
-
-## 📂 Estrutura do projeto
-
-Laranjal/
-├── api.py # Código da API FastAPI
-├── modelo_treinado.pkl # Pipeline treinado e salvo
-├── requirements.txt # Dependências do projeto
-├── README.md # Este arquivo
-└── .gitignore
-
 
 ## 🛠️ Como executar localmente
 
@@ -73,6 +63,46 @@ json
   "Qualidade Prevista": 3
 }
 
+Como foi feita a análise e criação do modelo
+O projeto foi desenvolvido com as seguintes etapas principais:
+
+Exploração dos dados:
+
+Visualização de distribuições e correlações com Seaborn e Matplotlib.
+
+Identificação de variáveis categóricas e numéricas.
+
+Detecção e tratamento de valores faltantes e outliers.
+
+Pré-processamento:
+
+Codificação de variáveis categóricas com One-Hot Encoding.
+
+Transformação da coluna de defeitos em binária (Blemishes).
+
+Padronização dos dados numéricos com StandardScaler.
+
+Conversão da variável alvo (contínua) em faixas discretas de qualidade.
+
+Modelagem:
+
+Treinamento de um RandomForestClassifier com ajuste de hiperparâmetros via Grid Search.
+
+Avaliação com métricas de acurácia e F1-score ponderado devido ao desbalanceamento entre classes.
+
+Análise da matriz de confusão para verificar o desempenho em cada classe.
+
+Empacotamento:
+
+Criação de um pipeline completo com scikit-learn e feature-engine.
+
+Salvamento do pipeline treinado em .pkl com joblib para posterior carregamento.
+
+Serviço de API:
+
+Implementação de uma API REST com FastAPI.
+
+Endpoint /predict para receber dados em JSON e retornar a qualidade prevista.
 
 💻 Tecnologias utilizadas
 Python
